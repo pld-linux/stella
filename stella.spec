@@ -1,12 +1,12 @@
 Summary:	An Atari 2600 Video Computer System emulator
 Summary(pl):	Emulator Atari 2600 Video Computer System
 Name:		stella
-Version:	1.3
+Version:	1.4
 Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
-# Source0-md5:	b9318f82a180ff0a404fca78511b2772
+# Source0-md5:	dc2496a46eb823aa9994c77a7f62cf62
 Patch0:		%{name}-conf.patch
 URL:		http://stella.sourceforge.net/
 BuildRequires:	XFree86-devel
@@ -29,11 +29,11 @@ ROM, wiêc mo¿na graæ w swoje ulubione stare gry z Atari 2600 na PC.
 
 %prep
 %setup -q
-%patch0 -p1
+#%%patch0 -p1
 
 %build
 cd src/build
-%{__make} linux-x \
+%{__make} linux-gl \
 	CC=%{__cc} \
 	CXX=%{__cxx}
 
@@ -41,14 +41,14 @@ cd src/build
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}}
 
-install src/build/stella.x11 $RPM_BUILD_ROOT%{_bindir}/%{name}
-install src/stellarc $RPM_BUILD_ROOT%{_sysconfdir}
+install src/build/stella $RPM_BUILD_ROOT%{_bindir}/%{name}
+install src/emucore/stella.pro $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Announce.txt Changes.txt Todo.txt docs/*.html
+%doc Announce.txt Changes.txt Todo.txt docs
 %attr(755,root,root) %{_bindir}/stella
-%config(noreplace) %verify(not md5 size mtime) %{_sysconfdir}/stellarc
+%config %{_sysconfdir}/stella.pro
