@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
+# Source0-md5:	b9318f82a180ff0a404fca78511b2772
 Patch0:		%{name}-conf.patch
 URL:		http://stella.sourceforge.net/
 BuildRequires:	XFree86-devel
