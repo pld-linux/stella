@@ -34,8 +34,8 @@ ROM, wiêc mo¿na graæ w swoje ulubione stare gry z Atari 2600 na PC.
 %build
 cd src/build
 %{__make} linux-gl \
-	CC=%{__cc} \
-	CXX=%{__cxx}
+	CC="%{__cc}" \
+	CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
