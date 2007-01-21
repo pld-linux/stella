@@ -1,13 +1,13 @@
 Summary:	An Atari 2600 Video Computer System emulator
 Summary(pl):	Emulator Atari 2600 Video Computer System
 Name:		stella
-Version:	1.4.2
+Version:	2.3.5
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
-# Source0-md5:	c23614f5fd3d963e308dc82916b98734
-Patch0:		%{name}-conf.patch
+# Source0-md5:	b3458475518b53c459a76399da5dcc3f
+Patch0:		%{name}-desktop.patch
 URL:		http://stella.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	alsa-lib-devel >= 0.9.0
@@ -29,26 +29,32 @@ ROM, wiêc mo¿na graæ w swoje ulubione stare gry z Atari 2600 na PC.
 
 %prep
 %setup -q
-#%%patch0 -p1
+%patch0 -p1
 
 %build
-cd src/build
-%{__make} linux-gl \
+./configure \
+	--prefix=%{_prefix}
+%{__make} \
 	CC="%{__cc}" \
 	CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_sysconfdir}}
 
-install src/build/stella $RPM_BUILD_ROOT%{_bindir}/%{name}
 install src/emucore/stella.pro $RPM_BUILD_ROOT%{_sysconfdir}
+install src/common/stella.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Announce.txt Changes.txt Todo.txt docs
+%doc Announce.txt Changes.txt Readme.txt Todo.txt docs
 %attr(755,root,root) %{_bindir}/stella
 %config %{_sysconfdir}/stella.pro
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.xpm
