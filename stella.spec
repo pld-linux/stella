@@ -1,5 +1,5 @@
 Summary:	An Atari 2600 Video Computer System emulator
-Summary(pl.UTF-8):   Emulator Atari 2600 Video Computer System
+Summary(pl.UTF-8):	Emulator Atari 2600 Video Computer System
 Name:		stella
 Version:	2.3.5
 Release:	1
