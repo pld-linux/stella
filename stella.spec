@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
 # Source0-md5:	538233e42e9cfddf2bc99433e11bb454
 Patch0:		%{name}-desktop.patch
 URL:		http://stella.sourceforge.net/
+BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	libpng-devel
