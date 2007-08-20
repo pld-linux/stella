@@ -37,8 +37,10 @@ ROM, więc można grać w swoje ulubione stare gry z Atari 2600 na PC.
 ./configure \
 	--prefix=%{_prefix}
 %{__make} \
-	CC="%{__cc}" \
-	CXX="%{__cxx}"
+	CXX="%{__cxx}" \
+	LD="%{__cxx}" \
+	CXXFLAGS="%{rpmcxxflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
