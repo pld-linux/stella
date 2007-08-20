@@ -1,12 +1,12 @@
 Summary:	An Atari 2600 Video Computer System emulator
 Summary(pl.UTF-8):	Emulator Atari 2600 Video Computer System
 Name:		stella
-Version:	2.3.5
+Version:	2.4
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
-# Source0-md5:	b3458475518b53c459a76399da5dcc3f
+# Source0-md5:	538233e42e9cfddf2bc99433e11bb454
 Patch0:		%{name}-desktop.patch
 URL:		http://stella.sourceforge.net/
 BuildRequires:	XFree86-devel
