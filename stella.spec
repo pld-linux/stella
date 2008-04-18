@@ -1,13 +1,14 @@
 Summary:	An Atari 2600 Video Computer System emulator
 Summary(pl.UTF-8):	Emulator Atari 2600 Video Computer System
 Name:		stella
-Version:	2.5
+Version:	2.5.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
-# Source0-md5:	caab7dbf12c37a297a25b1a52db5c0a1
+# Source0-md5:	fec123bd73adc12ae72c88efcf0cbc24
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-useless_files.patch
 URL:		http://stella.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.10
@@ -32,6 +33,7 @@ ROM, więc można grać w swoje ulubione stare gry z Atari 2600 na PC.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 ./configure \
