@@ -1,12 +1,12 @@
 Summary:	An Atari 2600 Video Computer System emulator
 Summary(pl.UTF-8):	Emulator Atari 2600 Video Computer System
 Name:		stella
-Version:	2.6.1
+Version:	2.7.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Emulators
 Source0:	http://dl.sourceforge.net/stella/%{name}-%{version}-src.tar.gz
-# Source0-md5:	7ad3e1b5dcd8b3c6777c704be28a74fa
+# Source0-md5:	66944dafc938c1f2665df52779444554
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-useless_files.patch
 URL:		http://stella.sourceforge.net/
@@ -27,8 +27,9 @@ favorite old Atari 2600 games on your PC.
 %description -l pl.UTF-8
 Atari 2600 Video Computer System (VCS), który miał premierę w 1977
 roku, był najpopularniejszym systemem domowych gier video wczesnych
-lat 1980-tych. Ten emulator potrafi uruchomić większość obrazów Atari
-ROM, więc można grać w swoje ulubione stare gry z Atari 2600 na PC.
+lat 1980-tych. Ten emulator potrafi uruchomić większość obrazów
+Atari ROM, więc można grać w swoje ulubione stare gry z Atari 2600
+na PC.
 
 %prep
 %setup -q
