@@ -1,6 +1,6 @@
---- stella-2.5.1/Makefile~	2008-04-03 01:24:21.000000000 +0200
-+++ stella-2.5.1/Makefile	2008-04-16 23:46:18.103605080 +0200
-@@ -165,17 +165,12 @@
+--- stella-2.7.2/Makefile~	2009-01-11 22:31:21.000000000 +0100
++++ stella-2.7.2/Makefile	2009-02-02 09:15:47.000000000 +0100
+@@ -165,17 +165,9 @@
  	$(INSTALL) -d "$(DESTDIR)$(BINDIR)"
  	$(INSTALL) -c -s -m 755 "$(srcdir)/stella$(EXEEXT)" "$(DESTDIR)$(BINDIR)/stella$(EXEEXT)"
  	$(INSTALL) -d "$(DESTDIR)$(DOCDIR)"
@@ -9,19 +9,19 @@
 -	$(INSTALL) -c -m 644 $(wildcard $(srcdir)/docs/graphics/*.png) "$(DESTDIR)$(DOCDIR)/graphics"
  	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/applications"
  	$(INSTALL) -c -m 644 "$(srcdir)/src/unix/stella.desktop" "$(DESTDIR)$(DATADIR)/applications"
- 	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons"
- 	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons/mini"
- 	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons/large"
+-	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons"
+-	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons/mini"
+-	$(INSTALL) -d "$(DESTDIR)$(DATADIR)/icons/large"
 -	$(INSTALL) -c -m 644 "$(srcdir)/src/common/stella.png" "$(DESTDIR)$(DATADIR)/icons"
 -	$(INSTALL) -c -m 644 "$(srcdir)/src/common/stella.png" "$(DESTDIR)$(DATADIR)/icons/mini"
 -	$(INSTALL) -c -m 644 "$(srcdir)/src/common/stella.png" "$(DESTDIR)$(DATADIR)/icons/large"
  
  install-strip: install
  	$(STRIP) stella$(EXEEXT)
-@@ -198,9 +193,6 @@
+@@ -198,9 +190,6 @@
  	mkdir -p $(DISTNAME)/docs/graphics
  	$(STRIP) stella$(EXEEXT) -o $(DISTNAME)/Stella$(EXEEXT)
- 	cp SDL.dll zlib1.dll $(DISTNAME)
+ 	cp /bin/SDL.dll $(DISTNAME)
 -	cp Announce.txt Changes.txt Copyright.txt License.txt README-SDL.txt Readme.txt Todo.txt $(DISTNAME)/docs
 -	cp -r docs/*.html $(DISTNAME)/docs
 -	cp -r docs/graphics/*.png $(DISTNAME)/docs/graphics
