@@ -27,8 +27,8 @@ favorite old Atari 2600 games on your PC.
 %description -l pl.UTF-8
 Atari 2600 Video Computer System (VCS), który miał premierę w 1977
 roku, był najpopularniejszym systemem domowych gier video wczesnych
-lat 1980-tych. Ten emulator potrafi uruchomić większość obrazów Atari
-ROM, więc można grać w swoje ulubione stare gry z Atari 2600 na PC.
+lat '80. Ten emulator potrafi uruchomić większość obrazów Atari ROM,
+więc można grać w swoje ulubione stare gry z Atari 2600 na PC.
 
 %prep
 %setup -q
