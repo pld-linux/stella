@@ -10,5 +10,5 @@
  Terminal=false
  Type=Application
 -Categories=Application;Emulator;Game;
-+Categories=Application;Game;
++Categories=Utility;Emulator;
 +# vi: encoding=utf-8
